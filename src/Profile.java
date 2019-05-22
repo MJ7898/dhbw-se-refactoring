@@ -1,4 +1,4 @@
-package refactoring;
+package refactor;
 
 import android.content.Context;
 import android.content.Intent;
