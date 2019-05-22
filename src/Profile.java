@@ -51,6 +51,7 @@ public class FarmerProfile extends AppCompatActivity {
 
 
     public void showShopsOrMachines(){
+        // fix / change method
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, android.R.id.text1, farmshopList);
 
