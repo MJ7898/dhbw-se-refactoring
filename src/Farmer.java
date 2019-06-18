@@ -22,13 +22,13 @@ import java.util.Map;
 
 public class Farmer extends AppCompatActivity {
 
-    public EditText emailTextbox, passwortTextBox, nameTextBox, vornameTextBox, geburtstagTextBox;
+    private EditText emailTextbox, passwortTextBox, nameTextBox, vornameTextBox, geburtstagTextBox;
 
-    public Button registrieren;
-    public FirebaseAuth auth;
+    private Button registrieren;
+    private FirebaseAuth auth;
     private FirebaseFirestore mDatabase;
 
-    Map<String, Object> userEingabe = new HashMap<>();
+    private Map<String, Object> userEingabe = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +38,11 @@ public class Farmer extends AppCompatActivity {
     }
 
     public Farmer(){
-super();
+        super();
     }
-    public void onClick(View view){
+    
+    private void onClick(View view){
         auth = FirebaseAuth.getInstance();
-
 
         emailTextbox = (EditText) findViewById(R.id.inhaberTextBox);
         passwortTextBox = (EditText) findViewById(R.id.plzTextBox);
