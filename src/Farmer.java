@@ -75,17 +75,14 @@ public class Farmer extends AppCompatActivity {
         userEingabe.put("firstname",nameTextBox.getText().toString());
         userEingabe.put("lastname", vornameTextBox.getText().toString());
         userEingabe.put("born", geburtstagTextBox.getText().toString());
-
-
+        
         //create User
-
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(Farmer.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         Toast.makeText(Farmer.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
@@ -101,19 +98,13 @@ public class Farmer extends AppCompatActivity {
                             //speicher Daten in Datenbank. Tabelle: Customer: Dokument wird erzeugt mit der UiD des Nutzers.
                             mDatabase.collection("Farmer").document(uid).set(userEingabe);
                             finish();
-
                         }
-
                     }
                 });
-
     }
-
 
     protected void onResume() {
         super.onResume();
         progressBar.setVisibility(View.GONE);
-
     }
-
 }
